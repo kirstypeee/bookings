@@ -9,6 +9,7 @@
     "express": "^4.16.3",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "moment-range": "^4.0.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-dropzone": "^5.0.0",

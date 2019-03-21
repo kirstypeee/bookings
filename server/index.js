@@ -10,8 +10,8 @@ app.use(cors()); // so that app can access
 
 const formatBookings = (rawBookings) => {
   return rawBookings.map((bookingRecord) => ({
-    time: Date.parse(bookingRecord.time),
-    duration: bookingRecord.duration * 60 * 1000, // mins into ms
+    time: new Date(bookingRecord.time),
+    duration: bookingRecord.duration, // mins
     userId: bookingRecord.user_id,
   }))
 }
@@ -24,11 +24,8 @@ app.get('/bookings', (_, res) => {
 
 app.post('/bookings', (req, res) => {
   const newBookings = formatBookings(req.body);
-  newBookings.map(row => {
-    return row.newBooking = true;
-  })
-  const allBookings = _.concat(newBookings, bookings);
-  res.json(allBookings);
+  const bookings = _.concat(bookings, newBookings);
+  res.send(bookings);
 });
 
 app.listen(3001);

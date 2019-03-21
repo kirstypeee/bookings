@@ -127,9 +127,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.booking.isNew {
-  background-color: #008080;
-  border-color: #008080;
+.booking.overlaps {
+  background-color: #E3170D;
+  border-color: #E3170D;
 }
 
 .booking.small {
@@ -142,6 +142,32 @@
 
 .row {
   display: flex;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #E3170D;
+  border-radius: 15px;
+  margin-left: 55px;
+}
+
+.confirmation-message {
+  font-size: 1rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  background-color: #4a4a4a;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  border-radius: 15px;
+  margin-top: 1rem;
 }
 
 .loader, .loader:before, .loader:after {
