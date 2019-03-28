@@ -16,7 +16,7 @@ const formatBookings = (rawBookings) => {
   }))
 }
 
-const bookings = formatBookings(JSON.parse(fs.readFileSync('./server/bookings.json')));
+let bookings = formatBookings(JSON.parse(fs.readFileSync('./server/bookings.json')));
 
 app.get('/bookings', (_, res) => {
   res.json(bookings);
@@ -24,7 +24,7 @@ app.get('/bookings', (_, res) => {
 
 app.post('/bookings', (req, res) => {
   const newBookings = formatBookings(req.body);
-  const bookings = _.concat(bookings, newBookings);
+  bookings = _.concat(bookings, newBookings);
   res.send(bookings);
 });
 
